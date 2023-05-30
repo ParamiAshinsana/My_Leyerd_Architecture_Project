@@ -14,33 +14,32 @@ public class CustomerBOImpl implements CustomerBO {
 
     @Override
     public ArrayList<CustomerDTO> getAllCustomers() throws SQLException, ClassNotFoundException {
-                         return null;
-                         //sdf
+        return customerDAO.getAll();
     }
 
     @Override
     public boolean addCustomer(CustomerDTO dto) throws SQLException, ClassNotFoundException {
-                         return false;
+        return customerDAO.add(dto);
     }
 
     @Override
     public boolean updateCustomer(CustomerDTO dto) throws SQLException, ClassNotFoundException {
-                        return false;
+        return customerDAO.update(dto);
     }
 
     @Override
     public boolean exist(String id) throws SQLException, ClassNotFoundException {
-                        return false;
+        return customerDAO.exist(id);
     }
 
     @Override
     public boolean delete(String id) throws SQLException, ClassNotFoundException {
-                       return false;
+        return customerDAO.delete(id);
     }
 
     @Override
     public String generateNewID() throws SQLException, ClassNotFoundException {
-                       return null;
+        return customerDAO.generateNewID();
     }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////
