@@ -18,27 +18,27 @@ public class ItemBOImpl implements ItemBO {
     }
 
     @Override
-    public boolean deleteItem(String code) throws SQLException, ClassNotFoundException {
+    public boolean delete(String code) throws SQLException, ClassNotFoundException {
         return itemDAO.delete(code);
     }
 
     @Override
-    public boolean saveItem(ItemDTO dto) throws SQLException, ClassNotFoundException {
+    public boolean addItems(ItemDTO dto) throws SQLException, ClassNotFoundException {
         return itemDAO.add(dto);
     }
 
     @Override
-    public boolean updateItem(ItemDTO dto) throws SQLException, ClassNotFoundException {
+    public boolean updateItems(ItemDTO dto) throws SQLException, ClassNotFoundException {
         return itemDAO.update(dto);
     }
 
     @Override
-    public boolean existItem(String code) throws SQLException, ClassNotFoundException {
+    public boolean exist(String code) throws SQLException, ClassNotFoundException {
         return itemDAO.exist(code);
     }
 
     @Override
-    public String generateNewCode() throws SQLException, ClassNotFoundException {
+    public String generateNewID() throws SQLException, ClassNotFoundException {
         return itemDAO.generateNewID();
     }
 
