@@ -9,6 +9,7 @@ import dao.Custom.Impl.OrderDetailsDAOImpl;
 import dao.Custom.ItemDAO;
 import dao.Custom.OrderDAO;
 import dao.Custom.OrderDetailsDAO;
+import dao.DAOFactory;
 import db.DBConnection;
 import model.CustomerDTO;
 import model.ItemDTO;
@@ -23,10 +24,15 @@ import java.util.List;
 
 public class PlaceOrderBOImpl implements PurchaseOrderBO {
 
-    OrderDAO orderDAO = new OrderDAOImpl();
-    CustomerDAO customerDAO = new CustomerDAOImpl();
-    ItemDAO itemDAO = new ItemDAOImpl();
-    OrderDetailsDAO orderDetailsDAO = new OrderDetailsDAOImpl();
+    //OrderDAO orderDAO = new OrderDAOImpl();
+    //CustomerDAO customerDAO = new CustomerDAOImpl();
+    //ItemDAO itemDAO = new ItemDAOImpl();
+    //OrderDetailsDAO orderDetailsDAO = new OrderDetailsDAOImpl();
+
+    CustomerDAO customerDAO = (CustomerDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.CUSTOMER);
+    ItemDAO itemDAO = (ItemDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.ITEM);
+    OrderDAO orderDAO = (OrderDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.ITEM);
+    OrderDetailsDAO orderDetailsDAO = (OrderDetailsDAO) DAOFactory.getDaoFactory().getDAO(DAOFactory.DAOTypes.ITEM);
 
 
     @Override
