@@ -1,4 +1,4 @@
-package dao;
+package bo;
 
 public interface SuperBo {
 }

@@ -1,9 +1,5 @@
 package bo;
 
-import bo1.CustomerBO;
-import bo1.ItemBO;
-import dao.SuperBo;
-
 public class BOFactory {
     private static BOFactory boFactory;
     private BOFactory(){
@@ -20,7 +16,7 @@ public class BOFactory {
     public SuperBo getBO(BOTypes types){
         switch (types){
             case CUSTOMER:
-                return (SuperBo) new CustomerBOImpl();
+                return  new CustomerBOImpl();
             case ITEM:
                 return (SuperBo) new ItemBOImpl();
             case PO:
